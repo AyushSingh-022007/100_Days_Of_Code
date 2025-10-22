@@ -34,7 +34,7 @@ int main() {
             if (arr[j] > max)
                 max = arr[j];
         }
-        printf("%d ", max);
+        printf("%d ",max);
     }
 
     return 0;
