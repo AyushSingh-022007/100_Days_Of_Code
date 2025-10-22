@@ -49,7 +49,7 @@ int main()
         printf("Invalid input for k.\n");
         return 0;
     }
-    int result = maxSubarraySum(a, size, k);
+    int result = maxSubarraySum(a, size,k);
     printf("Maximum sum for subarray of size %d is %d\n", k, result);
     return 0;
 }
