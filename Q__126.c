@@ -32,7 +32,7 @@ int main()
     printf("File content:\n");
     while ((ch = fgetc(file)) != EOF)
     {
-        putchar(ch);
+        printf("%c",ch);
     }
     fclose(file);
     return 0;
