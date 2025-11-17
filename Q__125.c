@@ -10,20 +10,21 @@ File updated successfully with appended text.
 
 */
 #include <stdio.h>
+#include <string.h>
 int main()
 {
     FILE *file;
     char filename[50];
     char text[200];
     printf("Enter the filename: ");
-    scanf("%s", filename);
+    fgets(filename, sizeof(filename), stdin);
+    filename[strcspn(filename, "\n")] = '\0';
     file = fopen(filename, "a");
     if (file == NULL)
     {
         printf("Error! Could not open the file.\n");
         return 1;
     }
-    getchar();
     printf("Enter text to append: ");
     fgets(text, sizeof(text), stdin);
     fputs(text, file);
@@ -31,3 +32,4 @@ int main()
     printf("File updated successfully with appended text.\n");
     return 0;
 }
+
