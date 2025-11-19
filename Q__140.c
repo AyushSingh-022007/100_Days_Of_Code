@@ -1,4 +1,4 @@
-//Q140: Define a struct with enum Gender and print person's gender.
+// Q140: Define a struct with enum Gender and print person's gender.
 
 /*
 Sample Test Cases:
@@ -10,39 +10,34 @@ Male
 */
 #include <stdio.h>
 #include <string.h>
-
-enum dot
+enum Gender
 {
     MALE,
-    FEMALE,
+    FEMALE
+};
+struct Person
+{
+    enum Gender gender;
 };
 int main()
 {
-    enum dot d;
-    char s[20];
-    printf("enter gender ");
-    scanf("%s",s);
-    if(strcmp(s,"MALE")||strcmp(s,"male")==0)
-    {
-        d=MALE;
-    }
-    else if(strcmp(s,"FEMALE")||strcmp(s,"female")==0)
-    {
-        d=FEMALE;
-    }
+    struct Person p;
+    char g[10];
+    printf("Enter gender (MALE/FEMALE): ");
+    scanf("%s", g);
+    if (strcmp(g, "MALE") == 0)
+        p.gender = MALE;
+    else if (strcmp(g, "FEMALE") == 0)
+        p.gender = FEMALE;
     else
     {
-        printf("invlaold");
+        printf("Invalid gender\n");
         return 0;
     }
-    switch(d)
-    {
-        case 0:
-        printf("MALE");
-        break;
-        case 1:
-        printf("FEMALE");
-        break;
-    }
+    printf("Gender: ");
+    if (p.gender == MALE)
+        printf("Male\n");
+    else
+        printf("Female\n");
     return 0;
 }
